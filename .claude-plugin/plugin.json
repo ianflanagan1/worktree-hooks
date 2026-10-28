@@ -1,0 +1,9 @@
+{
+  "name": "worktree-hooks",
+  "description": "Hooks that make parallel worktrees safe: they record when a Claude Code session is busy in one, so repo-fix leaves it alone, and refuse a git worktree remove that would lose work.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ian Flanagan"
+  },
+  "license": "MIT"
+}

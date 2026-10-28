@@ -1,0 +1,23 @@
+[project]
+name = "worktree-hooks"
+version = "0.1.0"
+description = "Claude Code hooks that make parallel worktrees safe: recording when a session is busy in one, and refusing a worktree removal that would lose work."
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+addopts = ["--import-mode=importlib"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
