@@ -62,15 +62,16 @@ def env(tmp_path: Path) -> dict[str, str]:
 @pytest.fixture
 def repo(tmp_path: Path, env) -> Path:
     repo = tmp_path / "repo"
-    subprocess.run(["git", "init", "-q", "-b", "main", str(repo)], check=True, env=env)
-    subprocess.run(["git", "-C", str(repo), "commit", "-q", "--allow-empty", "-m", "init"],
+    subprocess.run(["git", "init", "--quiet", "--initial-branch", "main", str(repo)],
                    check=True, env=env)  # fmt: skip
+    subprocess.run(["git", "-C", str(repo), "commit", "--quiet", "--allow-empty",
+                    "--message", "init"], check=True, env=env)  # fmt: skip
     return repo
 
 
 def worktree(repo: Path, env) -> Path:
     wt = repo.parent / "wt"
-    subprocess.run(["git", "-C", str(repo), "worktree", "add", "-q", "--detach", str(wt)],
+    subprocess.run(["git", "-C", str(repo), "worktree", "add", "--quiet", "--detach", str(wt)],
                    check=True, env=env)  # fmt: skip
     return wt
 
@@ -90,8 +91,8 @@ def test_removing_a_worktree_whose_commits_are_on_a_branch_is_allowed(repo, env)
 
 def test_removing_a_worktree_with_commits_on_no_branch_is_refused_with_them_listed(repo, env):
     wt = worktree(repo, env)
-    subprocess.run(["git", "-C", str(wt), "commit", "-q", "--allow-empty", "-m", "Lost work"],
-                   check=True, env=env)  # fmt: skip
+    subprocess.run(["git", "-C", str(wt), "commit", "--quiet", "--allow-empty",
+                    "--message", "Lost work"], check=True, env=env)  # fmt: skip
     result = hook("git worktree remove ../wt", repo, env)
     assert result.returncode == 2
     assert result.stderr.startswith(

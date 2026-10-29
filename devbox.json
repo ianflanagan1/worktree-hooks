@@ -10,9 +10,9 @@
   },
   "shell": {
     "scripts": {
-      "test": "uv run pytest -q",
+      "test": "uv run pytest --quiet",
       "lint": "uv run ruff check && uv run ruff format --check",
-      "lint-file": "for f in \"$@\"; do case \"$f\" in *.py) uv run ruff format -q \"$f\" && uv run ruff check -q --fix \"$f\" || exit 1;; esac; done",
+      "lint-file": "for f in \"$@\"; do case \"$f\" in *.py) uv run ruff format --quiet \"$f\" && uv run ruff check --quiet --fix \"$f\" || exit 1;; esac; done",
       "check": "devbox run lint && devbox run test"
     }
   }
