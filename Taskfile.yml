@@ -1,0 +1,29 @@
+version: '3'
+
+tasks:
+  check:
+    desc: Ruff, then the tests
+    cmds:
+      - task: lint
+      - task: test
+
+  test:
+    desc: Run the tests
+    cmds:
+      - uv run pytest --quiet
+
+  lint:
+    desc: Lint, and check formatting
+    cmds:
+      - uv run ruff check
+      - uv run ruff format --check
+
+  lint-file:
+    desc: Format and fix the Python files given after --
+    cmds:
+      - |
+        for f in {{range .CLI_ARGS_LIST}}{{shellQuote .}} {{end}}; do
+          case "$f" in
+          *.py) uv run ruff format --quiet "$f" && uv run ruff check --quiet --fix "$f" || exit 1 ;;
+          esac
+        done

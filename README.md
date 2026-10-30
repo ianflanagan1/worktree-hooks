@@ -39,7 +39,7 @@ As a plugin, it needs `git` and a `python3` of 3.13 or later on `PATH`; the macO
 ## Development
 
 ```sh
-devbox run check   # ruff, then pytest
+devbox run -- task check   # ruff, then pytest
 ```
 
 ## License
