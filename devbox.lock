@@ -63,6 +63,10 @@
       "last_modified": "2026-10-08T19:21:32Z",
       "resolved": "github:NixOS/nixpkgs/8edc0c72e3a38faf5434e40d1f19431125fe4b30?lastModified=1791487292&narHash=sha256-tqM7xDEsaeK1p6VvRygeZ9LkQRpUUkbRT02BHv6hnTM%3D"
     },
+    "github:ianflanagan1/coupled-tags-lint/v0.1.0#coupled-tags-lint": {
+      "last_modified": "2026-11-04T05:12:25Z",
+      "resolved": "github:ianflanagan1/coupled-tags-lint/2d4116ed4830070427c0db0d6ead11965fabfd70?lastModified=1793769145&narHash=sha256-MAbtVQbxv9LknKlauO1oXQfUDQJqG1T7hdEozOO0hhk%3D#coupled-tags-lint"
+    },
     "go-task@3.53.1": {
       "last_modified": "2026-10-28T22:04:29Z",
       "resolved": "github:NixOS/nixpkgs/e62746b0b472753ef019baceab6f1e2e52014980#go-task",

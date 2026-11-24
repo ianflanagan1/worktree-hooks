@@ -20,7 +20,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-# COUPLED:claude-sessions. = repo-tools:src/repo_list/agents.py SESSIONS and its JSON fields
+# repo-tools reads the session records this writes: their directory and JSON fields.
+# COUPLED:claude-sessions:[= (also github.com/ianflanagan1/repo-tools: src/repo_list/agents.py)]
 SESSIONS = "claude-sessions"
 STATES = ("busy", "idle")
 END = "end"

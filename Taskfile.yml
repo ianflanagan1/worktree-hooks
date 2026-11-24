@@ -2,10 +2,11 @@ version: '3'
 
 tasks:
   check:
-    desc: Ruff, then the tests
+    desc: Ruff, the tests, then the COUPLED tags
     cmds:
       - task: lint
       - task: test
+      - coupled-tags-lint
 
   test:
     desc: Run the tests
