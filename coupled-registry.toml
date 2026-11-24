@@ -1,0 +1,11 @@
+version = 1
+
+["COUPLED:claude-sessions:"]
+relations = ["="]
+files = ["//github.com/ianflanagan1/repo-tools/src/repo_list/agents.py"]
+
+# Written by coupled --update: each group as it was last reviewed. Don't edit below this line.
+
+[reviewed."COUPLED:claude-sessions:"]
+definition = "4eb5ea556a8a5dbe"
+"COUPLED:claude-sessions: agent-activity" = {}
