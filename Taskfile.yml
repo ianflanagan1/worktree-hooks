@@ -6,7 +6,7 @@ tasks:
     cmds:
       - task: lint
       - task: test
-      - coupled-tags-lint
+      - coupled
 
   test:
     desc: Run the tests
